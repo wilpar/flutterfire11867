@@ -1,16 +1,29 @@
-# coresdktest
+# flutterfire issues 11867
 
-A new Flutter project.
+- Build successfully with firebase_core 2.21 in pubspec, and ios sdk 10.16 preloaded in podfile
 
-## Getting Started
+- change to 2.22 / 10.17
 
-This project is a starting point for a Flutter application.
+- remove podfile.lock, run pod install
 
-A few resources to get you started if this is your first Flutter project:
+- flutter run
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- fail!
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+✗ flutter run
+Launching lib/main.dart on iPhone 15 Pro in debug mode...
+Running pod install...                                              5.0s
+Running Xcode build...                                                  
+ └─Compiling, linking and signing...                         6.1s
+Xcode build done.                                           86.0s
+Failed to build iOS app
+Error (Xcode): Undefined symbols:
+
+
+Error (Xcode): Linker command failed with exit code 1 (use -v to see invocation)
+
+
+Could not build the application for the simulator.
+Error launching application on iPhone 15 Pro.
+```
